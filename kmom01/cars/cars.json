@@ -1,0 +1,7 @@
+[
+    {"model": "model1", "price": 20099, "driver": "Kenny Bräck"},
+    {"model": "model2", "price": 100000, "driver": "The Stig"},
+    {"model": "model3", "price": 300000, "driver": "Memphis Raines"},
+    {"model": "model4", "price": 305000, "driver": "Shirley Muldowney"},
+    {"model": "model1", "price": 1305000, "driver": "Tia Norfleet"}
+]
