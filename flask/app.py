@@ -7,7 +7,7 @@ My first Flask app
 # Importera relevanta moduler
 from flask import Flask, render_template
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path="/static")
 
 my_name = "Olov Wimark"
 my_course = "Nortbound"
@@ -22,6 +22,11 @@ def main():
 def about():
     """ About route """
     return render_template("about.html", name=my_name, course=my_course)
+
+@app.route("/redovisa")
+def redovisa():
+    """Redovisning - report"""
+    return render_template("redovisning.html")
 
 @app.errorhandler(404)
 def page_not_found(e):
