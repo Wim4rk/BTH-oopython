@@ -5,7 +5,12 @@
         <h1>Redovisning</h1>
         <p>Rendera redovisningar på något sjysst sätt. MD vore ju trevligt.</p>
         <p>För övrigt går det oroväckande bra med redovisningssidan.</p>
-        <img src="static/images/selfie.jpg" alt="Olov Wimark">
+        <!-- <img src="static/images/selfie.jpg" alt="Olov Wimark"> -->
+        <img src="{{ url_for('static', filename=selfie.jpg) }}">
+
+        <h3>kmom01</h3>
+        <p>Klass-variabler behöver inte deklarereras. Alls. Om de sätts
+        av __init__ så finns de i objektet sedan.</p>
     </div>
 </div>
 

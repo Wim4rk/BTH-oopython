@@ -7,6 +7,8 @@ My first Flask app
 # Importera relevanta moduler
 from flask import Flask, render_template
 
+# import person.py
+
 app = Flask(__name__, static_url_path="/static")
 
 my_name = "Olov Wimark"
