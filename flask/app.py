@@ -6,12 +6,12 @@ My first Flask app
 """
 # Importera relevanta moduler
 from flask import Flask, render_template
+from person import Person
 
 # import person.py
 
 app = Flask(__name__, static_url_path="/static")
 
-my_name = "Olov Wimark"
 my_course = "Nortbound"
 
 @app.route("/")
@@ -23,7 +23,7 @@ def main():
 @app.route("/about")
 def about():
     """ About route """
-    return render_template("about.html", name=my_name, course=my_course)
+    return render_template("about.html", name=pn.firstName, course=my_course)
 
 @app.route("/redovisa")
 def redovisa():
@@ -37,7 +37,7 @@ def page_not_found(e):
     """
 
     #pylint: disable=unused-argument
-    return "Flask 404 here, bot not the page you requested."
+    return "Flask 404 here, but not the page you requested."
 
 @app.errorhandler(500)
 def internal_server_error(e):
@@ -50,4 +50,6 @@ def internal_server_error(e):
     return "<p>Flask 500<pre>" + traceback.format_exc()
 
 if __name__ == "__main__":
+    pn = Person('olov')
+
     app.run()

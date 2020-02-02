@@ -19,11 +19,12 @@ class Person():
     # birthDate = ''
     # image = ''
 
-    def __init__(self):
-        self.get_person()
+    def __init__(self, who):
+        self.get_person(who)
 
-    def get_person(self):
-        json_data = json.load(open("olov.json", encoding="utf-8"))
+    def get_person(self, who):
+        file_name = who + ".json"
+        json_data = json.load(open(file_name, encoding="utf-8"))
         self.firstName = json_data["firstN"]
         self.lastName = json_data["lastN"]
         self.__birthDate = json_data["birthD"]

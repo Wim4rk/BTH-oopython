@@ -2,5 +2,8 @@
     "firstN": "Olov",
     "lastN": "Wimark",
     "birthD": "1982-06-30",
-    "img": "/static/images/selfie.jpg"
+    "img": "/static/images/selfie.jpg",
+    "course": "Object Oriented Python Programming",
+    "course_abbr": "oopython",
+    "school": "Blekinge Tekniska Högskola"
 }
