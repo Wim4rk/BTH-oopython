@@ -2,12 +2,21 @@
 
 <div class="container" role="main">
     <div class="page-header">
-        <h1>Stiligt! En fungerande applikation.</h1>
-        <h3>Nu inkluderas headern och footern med hjälp av Jinja2</h3>
-
-        <h3>Hej,</h3>
-        <p>Mitt namn är {{ name }}, och jag studerar vid {{ school }}
+        <h1>Objektorienterad Python</h1>
+        <p><em>{{ quote }}</em></p>
     </div>
+    <article>
+
+    <figure class="right">
+        <img src="{{ img }}" alt="Olov Wimark">
+        <caption>Eder hängivne skribent</caption>
+    </figure>
+
+    <h3>Hej,</h3>
+    <p>Mitt namn är {{ name }}, och jag studerar vid {{ school }}. Idag är
+        jag {{ age }} och funderar över ett karriärbyte.</p>
+
+    </article>
 </div>
 
 {% include 'footer.html' %}

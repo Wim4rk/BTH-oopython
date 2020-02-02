@@ -2,3 +2,46 @@ body {
     padding-top: 70px;
     padding-bottom: 30px;
 }
+
+page-header{
+    max-width: 60em;
+    margin: 0 auto;
+}
+
+article {
+    max-width: 60em;
+    margin: 0 auto;
+}
+
+figure {
+    width: 20em;
+    padding: 1em;
+    background-color: #ccc;
+    overflow: auto;
+}
+
+img {
+    width: 100%;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+code,
+kbd,
+samp,
+var {
+    color: #000;
+    background: #efefef;
+    border: 1px solid #777;
+}
+
+code {
+    overflow: auto;
+    overflow-y: hidden;
+}

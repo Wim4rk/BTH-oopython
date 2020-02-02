@@ -27,16 +27,20 @@ class Person():
         json_data = json.load(open(file_name, encoding="utf-8"))
         self.firstName = json_data["firstN"]
         self.lastName = json_data["lastN"]
+        self.name = self.firstName + " " + self.lastName
         self.school = json_data["school"]
-        self.__birthDate = json_data["birthD"]
+        self._birthDate = json_data["birthD"]
         self.image = json_data["img"]
 
         #self.age = self.calculate_age()
 
     def calculate_age(self):
-        born = datetime.strptime(self.__birthDate, "%Y-%m-%d")
+        born = datetime.strptime(self._birthDate, "%Y-%m-%d")
         today = datetime.today()
         return today.year - born.year - ((today.month, today.day) < (born.month, born.day))
+
+    def get_image_link(self):
+        return "/static/" + self.image
 
     def first_name(self):
         return self.firstName

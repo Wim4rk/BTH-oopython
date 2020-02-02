@@ -7,30 +7,29 @@ My first Flask app
 # Importera relevanta moduler
 from flask import Flask, render_template
 from person import Person
-
-# import person.py
+from quotes import Quotes
 
 app = Flask(__name__, static_url_path="/static")
-
-name = "Olov Wimark"
-course = "Nortbound"
 
 @app.route("/")
 def main():
     """ Main route """
     # return "Välkommen!"
-    return render_template("index.html", name=pn.firstName, school=pn.school)
+    return render_template("index.html", name=pn.name, school=pn.school,
+        img=pn.get_image_link(), age=pn.calculate_age(),
+        quote=qu.random_quote())
 
 @app.route("/about")
 def about():
     """ About route """
     # return render_template("about.html", name=pn.firstName, course=my_course)
-    return render_template("about.html", name=name, course=course)
+    return render_template("about.html", img=pn.get_image_link(),
+        quote=qu.random_quote())
 
 @app.route("/redovisa")
 def redovisa():
     """Redovisning - report"""
-    return render_template("redovisning.html")
+    return render_template("redovisning.html", quote=qu.random_quote())
 
 @app.errorhandler(404)
 def page_not_found(e):
@@ -53,5 +52,6 @@ def internal_server_error(e):
 
 if __name__ == "__main__":
     pn = Person('olov')
+    qu = Quotes('quotes.json')
 
     app.run()
