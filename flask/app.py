@@ -14,7 +14,6 @@ app = Flask(__name__, static_url_path="/static")
 @app.route("/")
 def main():
     """ Main route """
-    # return "Välkommen!"
     return render_template("index.html", name=pn.name, school=pn.school,
         img=pn.get_image_link(), age=pn.calculate_age(),
         quote=qu.random_quote())
@@ -22,7 +21,6 @@ def main():
 @app.route("/about")
 def about():
     """ About route """
-    # return render_template("about.html", name=pn.firstName, course=my_course)
     return render_template("about.html", img=pn.get_image_link(),
         quote=qu.random_quote())
 
