@@ -26,12 +26,12 @@ class Quotes():
 
     def get_quotes(self, file):
         """Opens json-file, stores dictionary"""
-        self.quotes = json_data = json.load(open(file, encoding="utf-8"))
+        self.quotes = json.load(open(file, encoding="utf-8"))
 
     def random_quote(self):
         """Returns a random quote"""
-        quotesList = list(self.quotes.values())
-        return textwrap.fill(random.choice(quotesList))
+        quotes_list = list(self.quotes.values())
+        return textwrap.fill(random.choice(quotes_list))
 
     def print_random_quote(self):
         """

@@ -14,44 +14,45 @@ class Person():
     Contains data describing a person
     """
 
-    # firstName = ''
-    # lastName = ''
+    # first_name = ''
+    # last_name = ''
     # birthDate = ''
     # image = ''
 
     def __init__(self, who):
+        """ Sets up the class """
         self.get_person(who)
 
     def get_person(self, who):
+        """ Opens json file. """
         file_name = who + ".json"
         json_data = json.load(open(file_name, encoding="utf-8"))
-        self.firstName = json_data["firstN"]
-        self.lastName = json_data["lastN"]
-        self.name = self.firstName + " " + self.lastName
+        self.first_name = json_data["firstN"]
+        self.last_name = json_data["lastN"]
+        self.name = self.first_name + " " + self.last_name
         self.school = json_data["school"]
-        self._birthDate = json_data["birthD"]
+        self._birth_date = json_data["birthD"]
         self.image = json_data["img"]
 
         #self.age = self.calculate_age()
 
     def calculate_age(self):
-        born = datetime.strptime(self._birthDate, "%Y-%m-%d")
+        """ Sets persons age """
+        born = datetime.strptime(self._birth_date, "%Y-%m-%d")
         today = datetime.today()
-        return today.year - born.year - ((today.month, today.day) < (born.month, born.day))
+        return (today.year - born.year - ((today.month, today.day) <
+                                          (born.month, born.day)))
 
     def get_image_link(self):
+        """ Parses file name for images """
         return "/static/" + self.image
 
-    def first_name(self):
-        return self.firstName
-
-    def school(self):
-        return self.school
-
     def print_name(self):
-        print(self.firstName, self.lastName)
+        """ Prints name """
+        print(self.first_name, self.last_name)
 
     def print_age(self):
+        """ Prints age """
         print(self.calculate_age())
 
 if __name__ == "__main__":

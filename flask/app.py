@@ -11,18 +11,20 @@ from quotes import Quotes
 
 app = Flask(__name__, static_url_path="/static")
 
+course = "Objektorienterad Python"
+
 @app.route("/")
 def main():
     """ Main route """
-    return render_template("index.html", name=pn.name, school=pn.school,
-        img=pn.get_image_link(), age=pn.calculate_age(),
-        quote=qu.random_quote())
+    return (render_template("index.html", name=pn.name, school=pn.school,
+                            img=pn.get_image_link(), age=pn.calculate_age(),
+                            course=course, quote=qu.random_quote()))
 
 @app.route("/about")
 def about():
     """ About route """
     return render_template("about.html", img=pn.get_image_link(),
-        quote=qu.random_quote())
+                           quote=qu.random_quote(), course=course)
 
 @app.route("/redovisa")
 def redovisa():

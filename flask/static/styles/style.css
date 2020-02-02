@@ -3,7 +3,7 @@ body {
     padding-bottom: 30px;
 }
 
-page-header{
+.page-header {
     max-width: 60em;
     margin: 0 auto;
 }
