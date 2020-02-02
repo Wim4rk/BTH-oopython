@@ -27,6 +27,7 @@ class Person():
         json_data = json.load(open(file_name, encoding="utf-8"))
         self.firstName = json_data["firstN"]
         self.lastName = json_data["lastN"]
+        self.school = json_data["school"]
         self.__birthDate = json_data["birthD"]
         self.image = json_data["img"]
 
@@ -37,6 +38,11 @@ class Person():
         today = datetime.today()
         return today.year - born.year - ((today.month, today.day) < (born.month, born.day))
 
+    def first_name(self):
+        return self.firstName
+
+    def school(self):
+        return self.school
 
     def print_name(self):
         print(self.firstName, self.lastName)
@@ -45,6 +51,6 @@ class Person():
         print(self.calculate_age())
 
 if __name__ == "__main__":
-    pn = Person()
+    pn = Person('olov')
     pn.print_name()
     pn.print_age()

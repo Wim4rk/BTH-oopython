@@ -12,18 +12,20 @@ from person import Person
 
 app = Flask(__name__, static_url_path="/static")
 
-my_course = "Nortbound"
+name = "Olov Wimark"
+course = "Nortbound"
 
 @app.route("/")
 def main():
     """ Main route """
     # return "Välkommen!"
-    return render_template("index.html")
+    return render_template("index.html", name=pn.firstN, school=pn.school)
 
 @app.route("/about")
 def about():
     """ About route """
-    return render_template("about.html", name=pn.firstName, course=my_course)
+    # return render_template("about.html", name=pn.firstName, course=my_course)
+    return render_template("about.html", name=name, course=course)
 
 @app.route("/redovisa")
 def redovisa():
