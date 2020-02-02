@@ -19,7 +19,7 @@ course = "Nortbound"
 def main():
     """ Main route """
     # return "Välkommen!"
-    return render_template("index.html", name=pn.firstN, school=pn.school)
+    return render_template("index.html", name=pn.firstName, school=pn.school)
 
 @app.route("/about")
 def about():
