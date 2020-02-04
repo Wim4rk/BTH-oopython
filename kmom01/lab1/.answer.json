@@ -1,0 +1,36 @@
+{
+    "details": "Generated for olai19 at 2020-02-02 17:04:31.",
+    "key": "d10bd74e2bd150e7b1f616dd18ba2cda",
+    "summary": {
+        "questions": 11,
+        "points": 13,
+        "pass": 10,
+        "passdistinct": 13
+    },
+    "points": {
+        "1.1": 1,
+        "1.2": 1,
+        "1.3": 1,
+        "1.4": 1,
+        "1.5": 1,
+        "1.6": 1,
+        "1.7": 1,
+        "1.8": 1,
+        "2.1": 1,
+        "2.2": 1,
+        "3.1": 3
+    },
+    "answers": {
+        "1.1": "My cats name is Misha and has green eyes.",
+        "1.2": 7,
+        "1.3": "My cats name is Misha, has green eyes and 7 lives left to live.",
+        "1.4": "Misha has 4 paws.",
+        "1.5": "Misha has 1 paws but cats have 4 paws.",
+        "1.6": "My cats name is Misha, has green eyes and 7 lives left to live. My cats name is Nynaeve, has blue eyes and -1 lives left to live.",
+        "1.7": "26-05-20",
+        "1.8": 93920,
+        "2.1": 192988,
+        "2.2": "36-62-51",
+        "3.1": true
+    }
+}
