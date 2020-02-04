@@ -1,11 +1,27 @@
+html {
+    overflow-y: scroll;
+}
+
 body {
     padding-top: 70px;
     padding-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.6em;
+    font-family: Georgia, serif;
 }
 
 .page-header {
     max-width: 60em;
     margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Impact, Charcoal, sans-serif;
 }
 
 article {
