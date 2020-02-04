@@ -1,3 +1,7 @@
+"""
+Class controlling car
+"""
+
 import random
 
 class Car():
@@ -30,6 +34,7 @@ class Car():
 
 
     def __init__(self, model, price, driver):
+        """ Constructor - Gentlemen, start your engines """
         self.model = model
         self.driver = driver
         self._price = price
@@ -41,21 +46,26 @@ class Car():
 
     @classmethod
     def create_from_json(cls, json_data):
+        """ Get data from json-file """
         return cls(json_data["model"], json_data["price"], json_data["driver"])
 
     def present_car(self):
+        """ Reveal car facts """
         return "{d} with the car {m}. The car costs {p}$.".format(
             m=self.model, p=self._price, d=self.driver
         )
 
     def get_price(self):
+        """ What does this car cost? """
         return self._price
 
     def get_model(self):
+        """ What model is this car? """
         spaces = " " * round(self._position)
         return getattr(self, self.model).format(pos=spaces)
 
     def set_price(self, new_price):
+        """ Set the pricetag on the car """
         if float(new_price) / float(self._price) > 0.7:
             self._price = new_price
             return "New price is " + str(self._price)
@@ -64,24 +74,30 @@ class Car():
 
 
     def move_cars(self):
-        for car in self.cars:
+        """ Start the race """
+        for car in self.car_count:
             print(car.get_model())
 
     def move(self):
+        """ The race itself"""
         self._position += random.uniform(0.5, 2.5) + self._speed
 
     def get_pos(self):
+        """ Did we win?"""
         return self._position
 
     def __add__(self, other):
+        """ Overload + """
         return self._price + other.get_price()
 
     def __iadd__(self, other):
+        """ Overload += """
         self._price += other.get_price()
         return self
 
     @classmethod
     def wheel_message(cls):
+        """ Available outside the class """
         print("A car normally have {nr} wheels".format(nr=cls.wheels))
 
 # bmw = Car("BMW", 100000)

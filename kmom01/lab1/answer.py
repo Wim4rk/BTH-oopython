@@ -155,10 +155,6 @@ dbwebb.assert_equal("1.4", ANSWER, False)
 
 cat1.nr_of_paws = 1
 
-Cat.nr_of_paws
-
-
-
 
 ANSWER = (cat1.name + " has " + str(cat1.nr_of_paws) + " paws but cats have " +
           str(Cat.nr_of_paws) + " paws.")
@@ -188,7 +184,7 @@ cat2.eye_color = "blue"
 
 cat_list = [cat1, cat2]
 
-i = 0;
+i = 0
 cat_str = ''
 
 while i < len(cat_list):
@@ -314,12 +310,15 @@ dbwebb.assert_equal("2.1", ANSWER, False)
 # Write your code below and put the answer into the variable ANSWER.
 #
 
+# print(duration2.display())
+
+duration3 = Duration(9, 31, 43)
+duration2 += duration3
+
+# print(duration2.display())
 
 
-
-
-
-ANSWER = "Replace this text with the variable holding the answer."
+ANSWER = duration2.display()
 
 # I will now test your answer - change false to true to get a hint.
 dbwebb.assert_equal("2.2", ANSWER, False)

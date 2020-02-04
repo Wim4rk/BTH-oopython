@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: UTF-8 -*-
 
-from datetime import datetime
-import time
+"""
+Contains classes for lab1
+"""
+
+# from datetime import datetime
+# import time
 
 class Cat():
     """
@@ -21,7 +25,6 @@ class Cat():
     def set_lives_left(self, num):
         """ Boost yout kitten """
         self._lives_left = num
-        pass
 
     def get_lives_left(self):
         """ Before the kitty gets it! """
@@ -45,22 +48,32 @@ class Duration():
         self.seconds = s
 
     def __add__(self, other):
+        """ Overloading (+) """
         s = (self.duration_to_sec(self.display()) +
              other.duration_to_sec(other.display()))
         return s
 
-    def display(self):
-        time = []
-        time.append(str(self.hours).zfill(2))
-        time.append(str(self.minutes).zfill(2))
-        time.append(str(self.seconds).zfill(2))
+    def __iadd__(self, other):
+        """ Overloading (+=) """
+        self.hours += other.hours
+        self.minutes += other.minutes
+        self.seconds += other.seconds
 
-        return "-".join(time)
+        return self
+
+    def display(self):
+        """ Display duration as formatted string """
+        t = []
+        t.append(str(self.hours).zfill(2))
+        t.append(str(self.minutes).zfill(2))
+        t.append(str(self.seconds).zfill(2))
+
+        return "-".join(t)
 
     @staticmethod
-    def duration_to_sec(str):
+    def duration_to_sec(in_time):
         """ Converts given time into seconds """
-        hours, minutes, seconds = map(int, str.split("-"))
+        hours, minutes, seconds = map(int, in_time.split("-"))
 
         s = hours * 3600
         s += minutes * 60
