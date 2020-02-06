@@ -62,7 +62,7 @@ class Person():
     Lab 2
     """
 
-    def __init__(self, name, ssn, address = ""):
+    def __init__(self, name, ssn, address=""):
         """
         Constructor
         """
@@ -194,7 +194,7 @@ class Teacher(Person):
     """
     Greatest of all human beings
     """
-    def __init__(self, name, ssn, address = ""):
+    def __init__(self, name, ssn, address=""):
         """
         Sets this person up
         """
@@ -213,15 +213,15 @@ class Teacher(Person):
         """
         if course in self.courses:
             self.courses.remove()
-            return true
+            return True
 
-        return false
+        return False
 
     def to_string(self):
         """
         Returns string with address
         """
-        per = Person.to_string(self)
+        person = Person.to_string(self)
 
         c = 0
         courses = ""
@@ -232,7 +232,7 @@ class Teacher(Person):
                 courses += ", "
             c += 1
 
-        ret = per + " Courses: " + courses
+        ret = person + " Courses: " + courses
 
         return ret
 
@@ -279,8 +279,9 @@ class Student(Person):
     """
     The lowest class of man
     """
-    def __init__(self, name, ssn, address = ""):
+    def __init__(self, name, ssn, address=""):
         """ Give me a student """
+        super().__init__(name, ssn, address)
         self.course_grades = []
 
     def add_course_grade(self, course, grade):
@@ -290,17 +291,18 @@ class Student(Person):
     def average_grade(self):
         """ Return grade average """
 
-        sum = 0
+        grade_sum = 0
         courses = 0
         # print(self.course_grades)
 
         for g in self.course_grades:
+            # pylint: disable=unused-variable
             course, grade = g
-            if grade is not "-":
-                sum += int(grade)
+            if grade != "-":
+                grade_sum += int(grade)
                 courses += 1
 
-        return float(sum / courses)
+        return float(grade_sum / courses)
 
 place3 = Address("Lugard", "The Aiel Waste", "Gettland")
 stud = Student("Hugo", "503233-4011", place3)
