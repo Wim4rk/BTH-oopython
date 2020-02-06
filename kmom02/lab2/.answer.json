@@ -1,0 +1,22 @@
+{
+    "details": "Generated for olai19 at 2020-02-06 19:44:29.",
+    "key": "ccf4838f1a378bb4797b038f853bfd03",
+    "summary": {
+        "questions": 4,
+        "points": 8,
+        "pass": 8,
+        "passdistinct": 8
+    },
+    "points": {
+        "1.1": 2,
+        "1.2": 2,
+        "1.3": 2,
+        "1.4": 2
+    },
+    "answers": {
+        "1.1": "619172-0731",
+        "1.2": "Name: Skorstten SSN: 619172-0731 Address: Lugard Gotland Andor",
+        "1.3": "Name: Buster SSN: 768244-4857 Address: Imre Throvenland Ceald Courses: ramverk2, python, javascript1",
+        "1.4": 4
+    }
+}
