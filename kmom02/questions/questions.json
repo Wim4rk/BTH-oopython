@@ -1,0 +1,24 @@
+{
+    "1":{
+        "question":"Vad är det som går och går...?",
+        "answer":"klockan",
+        "alternative":
+        [
+            "En långsam katt",
+            "En osthyvel",
+            "Klockan",
+            "Åt fanders"
+        ]
+    },
+    "2":{
+        "question":"Vilket djur...",
+        "answer":"umgåsen",
+        "alternative":
+        [
+            "En fet katt",
+            "En smörkniv",
+            "Gåsen",
+            "Traditionen"
+        ]
+    }
+}
