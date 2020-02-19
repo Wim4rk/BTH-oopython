@@ -21,8 +21,6 @@ from dbwebb import Dbwebb
 dbwebb = Dbwebb()
 dbwebb.ready_to_begin()
 
-
-
 # ==========================================================================
 # Lab 2 - oopython
 #
@@ -31,15 +29,11 @@ dbwebb.ready_to_begin()
 # Here you will find everything this lab will go through and much more.
 #
 
-
-
 # --------------------------------------------------------------------------
 # Section 1. Class relationships
 #
 # Practice on creating classes and relationships between them in python.
 #
-
-
 
 # """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 # Exercise 1.1 (2 points)
@@ -57,15 +51,15 @@ dbwebb.ready_to_begin()
 #
 # Write your code below and put the answer into the variable ANSWER.
 #
+
+
 class Person():
     """
     Lab 2
     """
 
     def __init__(self, name, ssn, address=""):
-        """
-        Constructor
-        """
+        """Constructor"""
         self.name = name
         self._ssn = ssn
         self.address = address
@@ -129,6 +123,7 @@ dbwebb.assert_equal("1.1", ANSWER, False)
 # Write your code below and put the answer into the variable ANSWER.
 #
 
+
 class Address():
     """
     Lab2, Address
@@ -149,6 +144,7 @@ class Address():
         ret = "Address: " + self.city + " " + self.state + " " + self.country
 
         return ret
+
 
 place = Address("Lugard", "Gotland", "Andor")
 
@@ -189,6 +185,7 @@ dbwebb.assert_equal("1.2", ANSWER, False)
 #
 # Write your code below and put the answer into the variable ANSWER.
 #
+
 
 class Teacher(Person):
     """
@@ -236,6 +233,7 @@ class Teacher(Person):
 
         return ret
 
+
 place2 = Address("Imre", "Throvenland", "Ceald")
 teacher = Teacher("Buster", "768244-4857")
 teacher.set_address(place2)
@@ -275,6 +273,7 @@ dbwebb.assert_equal("1.3", ANSWER, False)
 # Write your code below and put the answer into the variable ANSWER.
 #
 
+
 class Student(Person):
     """
     The lowest class of man
@@ -303,6 +302,7 @@ class Student(Person):
                 courses += 1
 
         return float(grade_sum / courses)
+
 
 place3 = Address("Lugard", "The Aiel Waste", "Gettland")
 stud = Student("Hugo", "503233-4011", place3)

@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
-"""
-Test the json file
-"""
+"""Test the json file."""
 
 import pprint
 import json
 
-json = json.load(open("questions.json", encoding="utf-8"))
+Json = json.load(open("questions.json", encoding="utf-8"))
 
 pp = pprint.PrettyPrinter(indent=4)
 

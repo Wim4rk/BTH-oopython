@@ -20,6 +20,12 @@ Handles questions
         Opens the question from where it's stored
         """
 
+        # If question is radiobutton, create radiobutton object
+
+        # If question is checkbox, create checkbox question
+
+        # Store question in self.question
+
     def list_questions(self):
         """
         Load every question into this class
