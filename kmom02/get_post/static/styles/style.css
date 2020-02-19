@@ -1,0 +1,63 @@
+html {
+    overflow-y: scroll;
+}
+
+body {
+    padding-top: 70px;
+    padding-bottom: 30px;
+    font-size: 16px;
+    line-height: 1.6em;
+    font-family: Georgia, serif;
+}
+
+.page-header {
+    max-width: 60em;
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Impact, Charcoal, sans-serif;
+}
+
+article {
+    max-width: 60em;
+    margin: 0 auto;
+}
+
+figure {
+    width: 20em;
+    padding: 1em;
+    background-color: #ccc;
+    overflow: auto;
+}
+
+img {
+    width: 100%;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+code,
+kbd,
+samp,
+var {
+    color: #000;
+    background: #efefef;
+    border: 1px solid #777;
+}
+
+code {
+    overflow: auto;
+    overflow-y: hidden;
+}
