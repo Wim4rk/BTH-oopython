@@ -30,14 +30,18 @@ class Handler():
         """
         Save state to session
         """
-        session["employees"] = [e.to_json() for e in self.people]
+        local_list_people = []
+        for employee in self.people:
+            local_list_people.append(employee.to_json())
+        session["employees"] = local_list_people
 
     def read_session(self, session):
         """
         Get state from session
         """
         if session.get("employees", []):
-            self.people = [Employee.from_json(e) for e in session["employees"]]
+            self.people = ([Employee.from_json(employee)
+                            for employee in session["employees"]])
 
     def add_predefined_employees(self):
         """Hardcoded persons"""

@@ -11,16 +11,15 @@ from handler import Handler
 # pylint: disable=C0103
 
 app = Flask(__name__)
-app.secret_key = re.sub(r"[^a-z\d]", "", os.path.realpath(__file__))
 handler = Handler()
 
+app.secret_key = re.sub(r"[^a-z\d]", "", os.path.realpath(__file__))
 
 @app.route("/")
 def main():
     """Output main route."""
     handler.read_session(session)
     return render_template("index.html", people=handler.get_people())
-
 
 
 @app.route("/company", methods=["POST", "GET"])
@@ -37,6 +36,7 @@ def company():
 def reset():
     """Route for reset session"""
     _ = [session.pop(key) for key in list(session.keys())]
+
     return redirect(url_for("main"))
 
 

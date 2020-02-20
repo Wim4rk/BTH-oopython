@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+# -*- coding: UTF-8 -*-
 """
 Contains all classes for the different types of questions
 """
@@ -7,17 +9,27 @@ Class Question():
 Handles questions
 """
 
+    type = "text"
+
     def __init__(self, text, answer, question):
         """
         Constructor
         """
+        self.type = ""
         self._answer = ""
         self._text = ""
         self._questions = list_questions()
 
+
+    @classmethod
+    def get_type(cls):
+
+
     def _get_question(self, question):
         """
         Opens the question from where it's stored
+
+        Question is
         """
 
         # If question is radiobutton, create radiobutton object
@@ -33,6 +45,8 @@ Handles questions
         # Open Json
         return json.load(open("questions.json", encoding="utf-8"))
 
+
+    @classmethod
     def get_type():
         """
         Return type for question. Text, radiobuttons, checkbox?
@@ -42,32 +56,73 @@ Handles questions
         + text
         """
 
-    def get_text(self):
-        """
-        Returns the question itself
-        ret: string
-        """
 
-    def check_answer(self, response):
+    def check_answer(self, respons):
         """
         Checks if answer is correct
         """
-        if response = self._answer
-            return True
 
-        return False
+        respons = respons.get("answer")
+        return self._answer.lower() == respons.lower()
 
-class RadibuttonQuestion():
+
+    def get_text(self):
+        """
+        Returns the question itself,
+        to be used on the html-form
+        ret: string
+        """
+
+        # In order to return text, get current question
+
+
+class RadibuttonQuestion(Question):
     """
     Handles a radiobutton question
     """
 
+    type = "radiobutton"
 
-class CheckboxQuestion():
+    def __init__(text, answer, alternatives):
+        """Constructor."""
+
+
+        pass
+
+    def get_alternatives(self):
+        """Return a list."""
+        pass
+
+
+class CheckboxQuestion(Question):
     """
     Handles a checkbox question
     Checkboxes can have many answers
+    So 'answers' is a list
     """
+
+    type = "checkbox"
+
+    def __init__(text, answers, alternatives):
+        """Setup this question"""
+        self.alternatives = alternatives
+
+        __super__(text, answers)
+
+
+    def get_alternatives(self):
+        """Return list of alternatives"""
+
+
+    def check_answer(self, respons):
+        """For each alternative, return True or False."""
+
+        respons = respons.geList("answer")
+        points = 0
+        for v in respons:
+            if v in self._answer
+                points += 1
+        return points
 
 """
 Hur ser frågorna ut? Vad behöver de innehålla.

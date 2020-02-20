@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
+# -*- coding: UTF-8 -*-
 """
 Contains the handler/manager class for the questions.
 """
 
+import pdb
 import json
+
+from questions import Question, CheckboxQuestion, RadiobuttonQuestion
 
 class QuestionManager():
     """
@@ -13,7 +17,23 @@ class QuestionManager():
     def __init__(self):
         self._points = 0
         self._quest_count = 0
-        self.questions = 
+        self._questions = ''
+        self._question = ''
+
+
+    def get_score(self):
+        """
+        Return score
+        """
+        pass
+
+
+    def get_max_score(self):
+        """
+        Return max score
+        """
+        pass
+
 
     def has_next(self, question):
         """
@@ -29,19 +49,21 @@ class QuestionManager():
 
         return True
 
+
     def get_next(self, question):
         """
         If there is a next question, it is returned
         """
-        if has_next(question):
-            # Return the question number
+        return self._question[self._quest_count]
 
-        return False
 
-    def get_max(self):
+    def get_quest_count(self):
         """
         Return the number of questions in json file
+        Number should be stored in self.quest_count
         """
+        pass
+
 
     def read_session(self, session):
         """
@@ -50,12 +72,14 @@ class QuestionManager():
         self._points = session.get("points", 0)
         self._quest_count = session.get("quest_count", 0)
 
+
     def write_session(self, session):
         """
         Write current score and quest number to session
         """
         session["points"] = self._points
         session["quest_count"] = self._quest_count
+
 
     def reset(self):
         """
@@ -64,3 +88,17 @@ class QuestionManager():
         self._quest_count = 0
         self._points = 0
         return redirect(url_for('main'))
+
+
+    def correct_answer(self, form):
+        """
+        Return correct answer
+        """
+        question = self.get_next()
+
+        if Question.type == "text" or RadiobuttonQuestion.type == "radiobutton":
+            print(question)
+            self._points += question.check_answer (form.getList("answer"))
+        elif Checkboxquestion.type == "checkbox":
+            self._points += question.check_answer (form.getList("answer"))
+        self._quest_count += 1
