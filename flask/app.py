@@ -9,6 +9,9 @@ from flask import Flask, render_template
 from person import Person
 from quotes import Quotes
 
+pn = Person('olov')
+qu = Quotes('quotes.json')
+
 app = Flask(__name__, static_url_path="/static")
 
 course = "Objektorienterad Python"
@@ -29,7 +32,19 @@ def about():
 @app.route("/redovisa")
 def redovisa():
     """Redovisning - report"""
-    return render_template("redovisning.html", quote=qu.random_quote())
+    quote=qu.random_quote()
+    return render_template("redovisning.html", quote)
+
+
+# @app.route("/redovisa/<kmom>")
+# def redovisa(kmom):
+#     """Redovisning - kmom begärt"""
+#     quote=qu.random_quote()
+#
+#
+#
+#     return render_template("redovisning.html", quote)
+
 
 @app.errorhandler(404)
 def page_not_found(e):
@@ -51,7 +66,7 @@ def internal_server_error(e):
     return "<p>Flask 500<pre>" + traceback.format_exc()
 
 if __name__ == "__main__":
-    pn = Person('olov')
-    qu = Quotes('quotes.json')
+    # pn = Person('olov')
+    # qu = Quotes('quotes.json')
 
     app.run()

@@ -45,7 +45,7 @@ class Person():
 
     def get_image_link(self):
         """ Parses file name for images """
-        return "/static/" + self.image
+        return "static/" + self.image
 
     def print_name(self):
         """ Prints name """
