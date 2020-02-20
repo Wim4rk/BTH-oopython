@@ -18,7 +18,7 @@ class QuestionManager():
         self._points = 0
         self._quest_count = 0
         self._questions = ''
-        self._question = ''
+        self._question = []
 
 
     def get_score(self):

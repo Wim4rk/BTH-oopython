@@ -5,6 +5,7 @@
 import traceback
 import os
 import re
+# import pdb
 from flask import Flask, render_template, request, session, redirect, url_for
 from handler import Handler
 # pylint: disable=unused-argument
@@ -26,7 +27,10 @@ def main():
 def company():
     """ Company route """
 
+    handler.read_session(session)
+
     if request.method == "POST":
+        # pdb.set_trace()
         handler.add_employee(request.form)
         handler.write_session(session)
 
@@ -36,6 +40,10 @@ def company():
 def reset():
     """Route for reset session"""
     _ = [session.pop(key) for key in list(session.keys())]
+
+    # Destroy class instance
+    handler.people = []
+    handler.add_predefined_employees()
 
     return redirect(url_for("main"))
 

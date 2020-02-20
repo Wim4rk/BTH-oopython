@@ -40,8 +40,11 @@ class Handler():
         Get state from session
         """
         if session.get("employees", []):
-            self.people = ([Employee.from_json(employee)
-                            for employee in session["employees"]])
+            # self.people = ([Employee.from_json(employee)
+            #                 for employee in session["employees"]])
+            self.people = []
+            for employee in session["employees"]:
+                self.people.append(Employee.from_json(employee))
 
     def add_predefined_employees(self):
         """Hardcoded persons"""

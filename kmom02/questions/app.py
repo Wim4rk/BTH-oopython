@@ -72,9 +72,9 @@ def reset():
     """
     Reset questcount and session so the user can start over.
     """
-    qm.reset()
-    qm.write_session(session)
-    return redirect(url_for('main'))
+    _ = [session.pop(key) for key in list(session.keys())]
+
+    return redirect(url_for("main"))
 
 
 
