@@ -4,12 +4,12 @@
 import pprint
 import json
 
-Json = json.load(open("questions.json", encoding="utf-8"))
+jdata = json.load(open("questions.json", encoding="utf-8"))
 
 pp = pprint.PrettyPrinter(indent=4)
 
-pp.pprint(json)
+pp.pprint(jdata)
 
-print(json["1"]["answer"])
+print(jdata["0"]["answer"])
 
-pp.pprint(json["1"]["alternative"][3])
+pp.pprint(jdata["6"]["alt"])

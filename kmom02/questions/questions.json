@@ -1,24 +1,89 @@
 {
-    "1":{
-        "question":"Vad är det som går och går...?",
+    "0":{
+        "question":"Vad är det som går och går utan att någonsin komma till dörren?",
         "answer":"klockan",
-        "alternative":
-        [
-            "En långsam katt",
-            "En osthyvel",
-            "Klockan",
-            "Åt fanders"
-        ]
+        "type":"text"
+    },
+    "1":{
+        "question":"Vilket bilmärke kallas gärna för Bader-Meinhof Wagen?",
+        "answer":"bmw",
+        "type":"text"
     },
     "2":{
-        "question":"Vilket djur...",
-        "answer":"umgåsen",
-        "alternative":
+        "question":"Vilken är Göteborgs längsta fågel?",
+        "answer":"masthuggskaja",
+        "type":"text"
+    },
+    "3":{
+        "question":"Vilken är världens mest efterhängsna fågel?",
+        "answer":"raggugglan",
+        "type":"radiobutton",
+        "alt":
         [
-            "En fet katt",
-            "En smörkniv",
-            "Gåsen",
-            "Traditionen"
+            "Gärdsmygen",
+            "Raggugglan",
+            "Bofinken",
+            "Taltrasten"
+        ]
+    },
+    "4":{
+        "question":"Vilken är sveriges mest sociala fågel?",
+        "answer":"umgåsen",
+        "type":"radiobutton",
+        "alt":
+        [
+            "Kungsfågeln",
+            "Berguven",
+            "Umgåsen",
+            "Göken"
+        ]
+    },
+    "5":{
+        "question":"Vilken är Sveriges närmsta fågel?",
+        "answer": "härfågeln",
+        "type":"radiobutton",
+        "alt":
+        [
+            "Tornseglare",
+            "Storspoven",
+            "Härfågeln",
+            "Kornknarren"
+        ]
+    },
+    "6":{
+        "question":"Vilka djur håller tiden?",
+        "answer":["väduren", "uroxen"],
+        "type":"checkbox",
+        "alt":
+        [
+            "Väduren",
+            "Uroxen",
+            "Mammuten",
+            "Sengångaren"
+        ]
+    },
+    "7":{
+        "question":"Vilka fåglar skriver bäst?",
+        "answer":["sekreterarfågeln", "luntefågeln"],
+        "type":"checkbox",
+        "alt":
+        [
+            "Spillkråkan",
+            "Luntefågeln",
+            "Berguven",
+            "Sekreterarfågeln"
+        ]
+    },
+    "8":{
+        "question":"Vilka är Sveriges slarvigaste fåglar?",
+        "answer":["spillkråkan", "hafsörnen"],
+        "type":"checkbox",
+        "alt":
+        [
+            "Spillkråkan",
+            "Hafsörnen",
+            "Saltkråkan",
+            "Råkan"
         ]
     }
 }

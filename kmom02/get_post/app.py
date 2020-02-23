@@ -8,8 +8,8 @@ import re
 # import pdb
 from flask import Flask, render_template, request, session, redirect, url_for
 from handler import Handler
+
 # pylint: disable=unused-argument
-# pylint: disable=C0103
 
 app = Flask(__name__)
 handler = Handler()

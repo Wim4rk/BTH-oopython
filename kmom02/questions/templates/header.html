@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Allanz</title>
+    <title>Gåtspelet</title>
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
@@ -24,12 +24,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url_for('main') }}">Xrazy Allanz!</a>
+                <a class="navbar-brand" href="{{ url_for('main') }}">Svåra gåtor</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li {%- if request.path == "/" %} class="active" {% endif %}><a href="{{ url_for('main') }}">Start</a></li>
-                    <li {%- if request.path == "/reset" %} class="active" {% endif %}><a href="{{ url_for('reset') }}">Reset</a></li>
+                    <li {%- if request.path == "/reset" %} class="active" {% endif %}><a href="{{ url_for('reset') }}">Återställ</a></li>
                 </ul>
             </div>
         </div>

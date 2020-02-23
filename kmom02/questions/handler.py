@@ -4,10 +4,13 @@
 Contains the handler/manager class for the questions.
 """
 
-import pdb
 import json
+# import pdb
+# import pprint
 
 from questions import Question, CheckboxQuestion, RadiobuttonQuestion
+
+# pylint: disable=unused-variable
 
 class QuestionManager():
     """
@@ -17,52 +20,104 @@ class QuestionManager():
     def __init__(self):
         self._points = 0
         self._quest_count = 0
-        self._questions = ''
-        self._question = []
+        self._last_question = 0
+        self._questions = self._list_questions()
 
+
+    def _list_questions(self):
+        """Load every question into this class"""
+
+        # This is done every time, it shouldnt be.
+        # It could be, so long as the order is the same
+        # every time...
+
+        # pdb.set_trace()
+        local_list = []
+        jdata = json.load(open("questions.json", encoding="utf-8"))
+
+        # for quest in jdata.keys():
+        for i, quest in enumerate(jdata):
+        # for i in jdata.
+            # pp = pprint.PrettyPrinter(indent=4)
+            # pp.pprint(jdata)
+            # print("jdata - nyckel " + quest)
+
+            txt = jdata[quest]["question"]
+            switch = jdata[quest]["type"]
+            answ = jdata[quest]["answer"]
+            number = quest
+
+            # print(number)
+
+            if switch == "radiobutton":
+                alts = jdata[quest]["alt"]
+                new_obj = RadiobuttonQuestion(number, txt, answ, alts)
+            elif switch == "checkbox":
+                alts = jdata[quest]["alt"]
+                new_obj = CheckboxQuestion(number, txt, answ, alts)
+            else:
+                new_obj = Question(number, txt, answ)
+
+            # print(quest)
+            # print(type(quest))
+            # print(type(new_obj))
+
+            # pdb.set_trace()
+
+            local_list.append(new_obj)
+
+        # pp = pprint.PrettyPrinter(indent=4)
+        # pp.pprint(local_list)
+
+        local_list.sort(key=lambda quest_obj: quest_obj.get_number())
+
+        # print(local_list)
+
+        self._last_question = len(local_list)
+        # pdb.set_trace()
+        # print("Antal frågor: {}".format(self._last_question))
+        return local_list
 
     def get_score(self):
         """
         Return score
         """
-        pass
+        # pdb.set_trace()
+        return self._points
 
 
     def get_max_score(self):
         """
         Return max score
         """
-        pass
+        score = 0
+        for question in self._questions:
+            score += question.get_max_points()
 
+        return score
 
-    def has_next(self, question):
+    def has_next(self):
         """
-        Is there a next question?
-        ret boolean
+        Are there more questions?
+        Return boolean
         """
-
-        # Max number of questions?
-        maxQ = get_max()
-        if question >= maxQ:
-            # There is no next question
-            return False
-
-        return True
+        # (print("_quest_count is {} of {} questions"
+        #        .format(self._quest_count, self._last_question)))
+        return self._quest_count < self._last_question
 
 
-    def get_next(self, question):
+    def get_next(self):
         """
-        If there is a next question, it is returned
+        Return next question
         """
-        return self._question[self._quest_count]
+        return self._questions[self._quest_count]
 
 
     def get_quest_count(self):
         """
-        Return the number of questions in json file
-        Number should be stored in self.quest_count
+        Return the number of questions in list
         """
-        pass
+        return self._last_question
 
 
     def read_session(self, session):
@@ -83,11 +138,12 @@ class QuestionManager():
 
     def reset(self):
         """
-        Reset score and quest number to 0
+        Reset score and quest count to 0
         """
+        # pdb.set_trace()
         self._quest_count = 0
         self._points = 0
-        return redirect(url_for('main'))
+        # pdb.set_trace()
 
 
     def correct_answer(self, form):
@@ -96,9 +152,11 @@ class QuestionManager():
         """
         question = self.get_next()
 
+        # print("Fråga nummer: ", question)
+        # pdb.set_trace()
         if Question.type == "text" or RadiobuttonQuestion.type == "radiobutton":
-            print(question)
-            self._points += question.check_answer (form.getList("answer"))
-        elif Checkboxquestion.type == "checkbox":
-            self._points += question.check_answer (form.getList("answer"))
+            # print(question)
+            self._points += question.check_answer(form.getlist("answer"))
+        elif CheckboxQuestion.type == "checkbox":
+            self._points += question.check_answer(form.getlist("answer"))
         self._quest_count += 1
