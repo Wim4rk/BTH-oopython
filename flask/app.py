@@ -32,14 +32,13 @@ def about():
 @app.route("/redovisa")
 def redovisa():
     """Redovisning - report"""
-    quote=qu.random_quote()
-    return render_template("redovisning.html", quote)
+    return render_template("redovisning.html", quote=qu.random_quote())
 
 
 # @app.route("/redovisa/<kmom>")
 # def redovisa(kmom):
 #     """Redovisning - kmom begärt"""
-#     quote=qu.random_quote()
+#     quote = qu.random_quote()
 #
 #
 #
