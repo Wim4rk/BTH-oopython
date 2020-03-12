@@ -11,6 +11,8 @@ med python3 war.py.
 # redan ligger vinner den spelare som har högst valör. Vinnaren tar alla kort på
 # bordet. Seger inträffar när en spelare är helt utan kort.
 
+# pylint:disable=len-as-condition
+
 import sys
 
 from hand import Hand

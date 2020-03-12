@@ -9,7 +9,7 @@
 import unittest
 
 from unorderedlist import UnorderedList
-from error import KeyErr, ValErr, ScopeErr, ListEmpty
+from error import KeyErr, ValErr, ListEmpty
 
 class TestLists(unittest.TestCase):
     """ Test class for lists """

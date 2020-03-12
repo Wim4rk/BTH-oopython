@@ -243,13 +243,13 @@
     läser igenom den nu så inser jag att det mest handlar om att göra tydliga
     utskrifter till terminalen. Där finns en meny och lite utkommenterade rader
     som kan vara bra att ha om jag behöver rätta till något. Jag tycker själv att
-    det blev mer överskådligt än exemplet. Jag lade dessutom till en funktion för
-    att låta spelet gå av sig själv. Det kändes dumt att sitta och peppra på
-    enter-tangenten för att driva spelet. Jag menar, det är ju programmering vi
-    håller på med.</p>
+    gränssnittet blev mer överskådligt än exemplet. Jag lade dessutom till en
+    funktion för     att låta spelet gå av sig själv. Det kändes dumt att sitta
+    och peppra på enter-tangenten för att driva spelet. Jag menar, det är ju
+    programmering vi håller på med.</p>
     <p>En tanke slog mig när jag satt och kodade, och det är att de här klasserna
     kan jag ha och bygga vidare på en annan gång. Beteenden för en kortlek är väl
-    sådant som kan dyka upp fler gånger. Kanske rent av under kursens gång.
+    sådant som kan dyka upp fler gånger. Kanske rent av under kursens gång?
     Därför påbörjade jag en del funktioner här och var som inte användes den här
     gången men som kan komma att bli aktuella sedan.</p>
 
@@ -270,11 +270,39 @@
 
     <h3>I korthet</h3>
         <ul>
-        <li><p><strong>Vad tycker du om den typen av uppgift?</strong></p>
-            <p></p>
+        <li><p><strong>Är du bekant med UML sedan tidigare</strong></p>
+            <p>Nej, inte nämnvärt.</p>
         </li>
-        <li><p><strong>Gjorde du extrauppgiften?</strong></p>
-            <p></p>
+        <li><p><strong>Är du bekant med unittester sedan tidigare?</strong></p>
+            <p>Kanske något mer. Jag har skapat några testfall i C++. Det var
+            några andra som skrev test-klassen och jag fyllde bara på med ett
+            par satser för att testa min del av projektet. Open source och Github
+            är en bra källa till praktisk kunskap.</p>
+        </li>
+        <li><p><strong>Kan du se nyttan med UML...</strong></p>
+            <p>Ja, absolut. Det känns som ett verktyg mellan brain-storming och
+            dokumentation. Ett verktyg som ändras stagvis med processen. Det
+            används på ett sätt innan programmeringen sätter igång, ett annat
+            när kodandet fortskrider, och på ett tredje när det skall ingå i
+            dokumentationen av projektet.
+            <p>Jag begår två fel när jag jobbar med UML. Det första är att
+            skriva alldeles för avancerade diagram direkt. Det skulle vara
+            bättre om jag började med någon slags white-board först. Det andra
+            felet är att jag i för stor grad låter koden styra diagrammet. Även
+            om det inte är så jag gör så känns det som att jag skriver diagrammet
+            utifrån koden.</p>
+        </li>
+        <li><p><strong>Vad tycker du om objektorienterad programmering så
+                    långt?</strong></p>
+            <p>Jag är en förespråkare för objektorienterad programmering. Kanske
+            mest för att jag jobbar en del med andras kod på Github? Jag kan hur
+            som helst inte räkna med att det är jag själv som kommer att underhålla
+            min kod, så av omtanke för näste programmerare använder jag gärna
+            objektorientering (och en god dokumentation) för att underlätta
+            arbetet.</p>
+            <p>Näste programmerare <em>kan</em> ju dessutom vara jag, men om tre-
+            fyra år. Det är bäst att man har koll på något sätt, för minnet lär
+            inte räcka till.</p>
         </li>
         <li>
             <p><strong>TIL:</strong></p>
@@ -292,22 +320,25 @@
     <a id="kmom04"><h2>Kmom04</h2></a>
 
     <h3>Listor, stackar och noder</h3>
-    <p>Här har vi några riktigt bra verktyg.</p>
-    <p>Det här rör sig om strukturer som man har anat. Det känns uppenbart
-    att data hanteras i listor och köer. Om man ser till spel så behöver vi
-    kunna hantera till exempel fiender - flera noder av objekt. Det verkar
-    vara ett bra sätt att hantera på större data.</p>
+    <p>Här har vi några riktigt bra verktyg. Saker som man har anat när man
+    använt färdiga program. Det känns uppenbart att data hanteras i listor och
+    köer. Ibland är jag övertygad om att det rör sig om en databas. Framför allt
+    när man spelar vissa spel online, jag spelar mest schack, kan man se hur all
+    data hämtas fram och lagras undan.</p>
+    <p>Om man ser till snabbare spel så behöver vi kunna hantera diverse objekt
+    i rask takt. Det kan till exempel fiender - flera noder av objekt. En oordnad
+    lista känns ganska naturlig nu när jag lärt mig vad det är.</p>
     <p>Listor av noder skulle också kunna göra längre strängar av data mer
     hanterbart. Användbart till exempel i en schackmotor, eller inom övrig
-    AI.</p>
+    AI, där olika test och deras utfall skall lagras på ett dynamiskt sätt,
+    aggregeras och sammanställas innan de sparas undan mer permanent.</p>
 
     <h3>Queue</h3>
     <p>Den här övningen var oroväckande enkel. Jag bara skrev ner koden, med
     sammanlagt kanske tre syntaxError. Vi utgick från en färdig övning som
     baserades på Pythons inbyggda lista, och därifrån var det en smal sak att
-    transkribera koden till en lista av noder. Och en lista av noder kan vi
-    göra vad som helst med.</p>
-    <p><samp>main.py</samp> baserade jag på spelet Svälta Räv från kmom03. Jag
+    transkribera koden till en lista av noder.</p>
+    <p><samp>main.py</samp> baserade jag på spelet svälta räv från kmom03. Jag
     tweakade en del på det för att få det att bli snyggare och effektivare. Det
     kändes stelt att välja "Add" för varje sak man ville lägga till i kön, så
     jag valde att ta input rakt av. Fanns den inte i menyn så var det ett värde
@@ -316,12 +347,88 @@
     <p>Enligt specen för övningen använde jag ett exception för Peek-metoden.
     Det var ju heller inga stora problem.</p>
 
+    <h3>List</h3>
+    <p>Jag
+    lyckades mindre bra med klassen <samp>UnorderedList</samp>. Vissa funktioner
+    blev onödigt stora, inte minst remove, och fulla av if-satser. När jag efter
+    en stund insåg att övningen mer handlade om <em>exceptions</em> så fick jag
+    bättre idéer och kunde börja banta ner min kod.</p>
+    <p>Som vanligt valde jag att göra det enklaste valet, och jobbade vidare med
+    <em>unordered lists</em>. Anledningen är också densamma som vanligt. Jag
+    försöker alltid komma ikapp.</p>
+    <p>Jag förstår hur jag skall göra för att få till en cirkulär lista, och
+    även den som jag tror är vanligast: <em>self ordering list</em>. Att
+    dubbellänka skulle nog inte heller vara omöjligt. Det kan säkert bli
+    aktuellt i ett senare kursmoment.</p>
+    <p>Jag använde samma idéer kring <samp>main.py</samp> som i Queue. Möjligen
+    lägger jag för mycket tid vid gränssnitten, men jag tycker att de fungerar
+    väldigt bra.</p>
+
+    <h3>I korthet</h3>
     <ul>
+    <li>
+        <p><strong>Har du skapat egna datastrukturer tidigare?</strong></p>
+            <p>Jag tror vi jobbade med något slags listor under en kurs i
+            C++ 1999, men jag ska inte svära på det. Så låt oss säga nej,
+            för enkelhets skull.</p>
+    </li>
+    <li>
+        <p><strong>Vilken typ av lista valde du att göra?</strong></p>
+            <p>Jag valde att jobba på djupet med den oordnade listan. Om jag
+            hade valt en annan så hade det varit en självsorterande lista.
+            Det känns som ett verktyg jag kan ha nytta av när jag skapar listor
+            med mer data. Det känns som en mer naturlig konstruktion för mycket
+            av det som man jobbar med inom webbaserad programmering, där det
+            mesta i slutändan syftar till att ge användaren överskådlig
+            information.</p>
+    </li>
+    <li>
+        <p><strong>Vilka exceptions skapade du? Hur gör man för att de
+            ska kastas?</strong></p>
+            <p>Jag skapade fyra exceptions:
+                <ul>
+                <li><samp>KeyErr</samp> som kastas när ett index inte
+                    finns i listan.</li>
+                <li><samp>ValErr</samp> som på motsvarande sätt kastas
+                    när ett värde inte finns i listan.</li>
+                <li>Jag skapade <samp>ScopeErr</samp> för att användas när ett
+                    index hamnade utanför listan. Jag kom aldrig att använda
+                    det utan använde det inbygga IndexError istället. Även om
+                    jag tror att den är avsedd för tupler?</li>
+                <li><samp>ListEmpty</samp> är ett mycket användbart felmeddelande.
+                    Jag skapade en enkelt funktion, <em>list_empty()</em>, som
+                    kollade om <var>self.head</var> innehöll någon data. Ett
+                    tydligare sätt att skriva if-satser om inte annat, men också
+                    en bra kontroll innan jag utförde något över huvud tagit i
+                    andra funktioner.</li>
+                </ul></p>
+    </li>
+    <li>
+        <p><strong>Gjorde du någon extrauppgift?</strong></p>
+            <p>Jag lägger inte mycket tid på extrauppgifter över lag, men jag
+            kanske gör de vanliga uppgifterna lite för ingående?</p>
+    </li>
+    <li>
+        <p><strong>Vad är skillnaden mellan en array och en länkad lista?</strong></p>
+            <p>En array sätter först sitt omfång i minnet och expanderar efter
+            hand genom att kopiera sig själv till en ny plats.</p>
+            <p>En länkad lista kan fyllas på enklare och snabbare då dess noder
+            tar upp enskilda minnesplatser. Den är lite mer kostsam att söka i,
+            då den inte har indexering på samma sätt som en array.</p>
+            <p>Möjligen kan man tänka att node-listor lämpar sig väl till
+            dynamiska listor med hög omsättning och få sökningar, medan array
+            lämpar sig bättre till mer statisk data med många sökningar.</p>
+    </li>
+    <li>
+        <p><strong>Gick det bra att komma igång med kursmomentet?</strong></p>
+            <p>Det här kändes alldeles utmärkt, både i svårighetsgrad och i
+            omfång.</p>
+    </li>
     <li>
         <p><strong>TIL:</strong></p>
             <p>Jag har lärt mig att det finns en skillnad mellan vektorer
             - listor som enkelt kan utökas - och arrayer som egentligen är
-            av en fast längd.<p>
+            av en fast längd.</p>
     </li>
     </ul>
     </article>

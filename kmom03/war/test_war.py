@@ -5,7 +5,6 @@
 import unittest
 
 # import war
-from hand import Hand
 from card import Card
 from deck import Deck
 from war import War
@@ -56,7 +55,7 @@ class CheckCards(unittest.TestCase):
         """ Check no cards are mixed or duplicate """
         self.game = War()
         self.game.start_game()
-        while len(self.game.player_1.hand) > 0:
+        while len(self.game.player_1.hand) > 0: # pylint:disable=len-as-condition
             test_card = self.game.player_1.show_card()
             self.assertNotIn(test_card, self.game.player_2.hand)
 
@@ -64,7 +63,8 @@ class CheckCards(unittest.TestCase):
         """ Are players hands equally big? """
         self.game = War()
         self.game.start_game()
-        self.assertEqual(len(self.game.player_1.hand), len(self.game.player_2.hand))
+        self.assertEqual(len(self.game.player_1.hand),
+                         len(self.game.player_2.hand))
 
 
 # def test_fiftytwo(self):

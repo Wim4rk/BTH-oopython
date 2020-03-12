@@ -28,6 +28,7 @@ class Handler():
 9 - exit, quit:    Quit the program
 ======================================="""
 
+    #pylint:disable=too-many-branches
     def choice(self, inp):
         """ User request """
         str(inp.lower())

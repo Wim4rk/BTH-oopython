@@ -5,10 +5,6 @@
 Custom errors for unorderedlist.py
 """
 
-class Error(Exception):
-    """ User defined, custom exceptions """
-    pass
-
 class KeyErr(Error):
     """ Key not present in list """
     pass

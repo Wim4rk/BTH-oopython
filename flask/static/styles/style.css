@@ -59,6 +59,7 @@ var {
     color: #000;
     background: #efefef;
     border: 1px solid #777;
+    font-style: normal;
 }
 
 code {

@@ -27,10 +27,10 @@ class Deck():
                 # print("{} of {}".format(value, suit))
 
 
-    def add_jokers(self, number):
-        """ Add joker cards """
-        if number > 4:
-            number = 4
+    # def add_jokers(self, number):
+    #     """ Add joker cards """
+    #     if number > 4:
+    #         number = 4
 
         # for i in range(1, number):
         #     for j in ["spades", "clubs", "diamonds", "hearts"]:
