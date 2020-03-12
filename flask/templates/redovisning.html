@@ -7,9 +7,9 @@
     </div>
     <div class="quick-headers">
         <a href="#kmom01">Kmom01</a> |
-        <a href="#kmom02">Kmom02</a> <!-- |
+        <a href="#kmom02">Kmom02</a> |
         <a href="#kmom03">Kmom03</a> |
-        <a href="#kmom04">Kmom04</a> |
+        <a href="#kmom04">Kmom04</a> <!-- |
         <a href="#kmom05">Kmom05</a> |
         <a href="#kmom06">Kmom06</a> |
         <a href="#kmom07">Slutredovisning</a> -->
@@ -216,6 +216,114 @@
         haft gott om tid hade jag vetat var jag skulle sätta igång.</p>
         </li>
         </ul>
+    </article>
+
+    <article class="kmom03">
+    <a id="kmom03"><h2>Kmom03</h2></a>
+    <p>Nu gick det plötsligt lite bättre. Jag har jobbat med det här kursmomentet
+    under några veckors tid, prallellt med både kmom02 och -04.</p>
+    <p>Egentligen vet jag inte varför men det var enklare att hantera klasser
+    och arv i det här momentet.</p>
+
+    <h3>UML</h3>
+    <p>UML känns väldigt likt ER-modellering som vi använder i databas-kursen, men
+    också mycket mer användbart i OOP. Kanske för att jag lär mig mer nytt i den
+    här kursen än i databas? Jag får en bättre uppfattning om programmen jag
+    jag skriver på det här sättet, och jag har ett bra verktyg för att planera
+    mitt arbete.</p>
+
+    <h3>War!</h3>
+    <p>Det här var en rolig uppgift. Jag jobbade mig fram lite kors och tvärs i
+    den. Min första åtgärd var att skriva en klass för en kortlek, <samp>deck.py</samp>.
+    Det blev en rätt elegant liten klass med inte för många rader kod.</p>
+    <p>Parallellt fick jag ta fram en klass för själva spelkortet, <samp>card.py</samp>.
+    Inte heller här behöver jag särskilt mycket kod. Jag kunde hela tiden skala
+    bort rader eftersom jag märkte hur klasserna samspelade.</p>
+    <p>Själva spelkontrollen, <samp>war.py</samp> blev lite rörigare. När jag
+    läser igenom den nu så inser jag att det mest handlar om att göra tydliga
+    utskrifter till terminalen. Där finns en meny och lite utkommenterade rader
+    som kan vara bra att ha om jag behöver rätta till något. Jag tycker själv att
+    det blev mer överskådligt än exemplet. Jag lade dessutom till en funktion för
+    att låta spelet gå av sig själv. Det kändes dumt att sitta och peppra på
+    enter-tangenten för att driva spelet. Jag menar, det är ju programmering vi
+    håller på med.</p>
+    <p>En tanke slog mig när jag satt och kodade, och det är att de här klasserna
+    kan jag ha och bygga vidare på en annan gång. Beteenden för en kortlek är väl
+    sådant som kan dyka upp fler gånger. Kanske rent av under kursens gång.
+    Därför påbörjade jag en del funktioner här och var som inte användes den här
+    gången men som kan komma att bli aktuella sedan.</p>
+
+    <h3>Tester</h3>
+    <p>Det är kul att testa python-kod.</p>
+    <p>Jag hade god hjälp i själva designen av spelets klasser och metoder när jag
+    satt och försökte förstöra det på lite olika vis. Klasserna växte i samma takt
+    som testprogrammet. Den enda kod som skall vara otestad är alltså oskriven
+    kod, det var en bra devis ur utbildningsmaterialet.</p>
+    <p>Det som får mig att tveka lite till upplägget är att vi använder unittest.
+    De flesta därute verkar förespråka py-test.</p>
+
+    <h3>Svårigheter</h3>
+    <p>Jag hade lite svårt för UML-formatering. Hur mycket detalj skall man ha
+    med i diagrammet? Jag tvekade en stund om huruvida man skulle notera attribut
+    och metoder som inte var nåbara från utsidan, eller om man skulle representera
+    endast gränssnittet. Jag hittade lite olika exempel i böcker och på webbsidor.</p>
+
+    <h3>I korthet</h3>
+        <ul>
+        <li><p><strong>Vad tycker du om den typen av uppgift?</strong></p>
+            <p></p>
+        </li>
+        <li><p><strong>Gjorde du extrauppgiften?</strong></p>
+            <p></p>
+        </li>
+        <li>
+            <p><strong>TIL:</strong></p>
+                <p>Jag har lärt mig att linta direkt i editorn. Mycket, mycket
+                smidigt. Snabbare än att validera via dbwebb, och med omedelbar
+                feedback. Risken finns dock att man sitter i ett för tidigt
+                skede och rättar stavfel.</p>
+                <p>Det bästa är att jag kör med eran <samp>.cfg-fil</samp>, så
+                att jag verkligen vet att jag rättar rätt saker.<p>
+        </li>
+        </ul>
+    </article>
+
+    <article class="kmom04">
+    <a id="kmom04"><h2>Kmom04</h2></a>
+
+    <h3>Listor, stackar och noder</h3>
+    <p>Här har vi några riktigt bra verktyg.</p>
+    <p>Det här rör sig om strukturer som man har anat. Det känns uppenbart
+    att data hanteras i listor och köer. Om man ser till spel så behöver vi
+    kunna hantera till exempel fiender - flera noder av objekt. Det verkar
+    vara ett bra sätt att hantera på större data.</p>
+    <p>Listor av noder skulle också kunna göra längre strängar av data mer
+    hanterbart. Användbart till exempel i en schackmotor, eller inom övrig
+    AI.</p>
+
+    <h3>Queue</h3>
+    <p>Den här övningen var oroväckande enkel. Jag bara skrev ner koden, med
+    sammanlagt kanske tre syntaxError. Vi utgick från en färdig övning som
+    baserades på Pythons inbyggda lista, och därifrån var det en smal sak att
+    transkribera koden till en lista av noder. Och en lista av noder kan vi
+    göra vad som helst med.</p>
+    <p><samp>main.py</samp> baserade jag på spelet Svälta Räv från kmom03. Jag
+    tweakade en del på det för att få det att bli snyggare och effektivare. Det
+    kändes stelt att välja "Add" för varje sak man ville lägga till i kön, så
+    jag valde att ta input rakt av. Fanns den inte i menyn så var det ett värde
+    som skulle in i kön. Knappast sund hantering av input, men klart effektivt
+    för vår övning.</p>
+    <p>Enligt specen för övningen använde jag ett exception för Peek-metoden.
+    Det var ju heller inga stora problem.</p>
+
+    <ul>
+    <li>
+        <p><strong>TIL:</strong></p>
+            <p>Jag har lärt mig att det finns en skillnad mellan vektorer
+            - listor som enkelt kan utökas - och arrayer som egentligen är
+            av en fast längd.<p>
+    </li>
+    </ul>
     </article>
 </div>
 
